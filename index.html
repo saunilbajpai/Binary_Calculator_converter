@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Binary Converter & Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Binary Converter</h2>
+        <input type="text" id="inputValue" placeholder="Enter value" oninput="validateInput()" />
+        
+        <div id="conversionType">
+          <div>
+            <input type="radio" id="decToBin" name="conversion" value="decToBin" checked />
+            <label for="decToBin">Decimal to Binary</label>
+          </div>
+          <div>
+            <input type="radio" id="binToDec" name="conversion" value="binToDec" />
+            <label for="binToDec">Binary to Decimal</label>
+          </div>
+          <div>
+            <input type="radio" id="binToHex" name="conversion" value="binToHex" />
+            <label for="binToHex">Binary to Hexadecimal</label>
+          </div>
+          <div>
+            <input type="radio" id="hexToBin" name="conversion" value="hexToBin" />
+            <label for="hexToBin">Hexadecimal to Binary</label>
+          </div>
+          <div>
+            <input type="radio" id="binToOct" name="conversion" value="binToOct" />
+            <label for="binToOct">Binary to Octal</label>
+          </div>
+          <div>
+            <input type="radio" id="octToBin" name="conversion" value="octToBin" />
+            <label for="octToBin">Octal to Binary</label>
+          </div>
+        </div>
+    
+        <button onclick="convert()">Convert</button>
+        <p id="validationMsg"></p>
+        <p>Result: <span id="result"></span></p>
+    
+        <h2>Binary Calculator</h2>
+        <input type="text" id="bin1" placeholder="Binary 1" oninput="validateCalcInput()" />
+        <input type="text" id="bin2" placeholder="Binary 2" oninput="validateCalcInput()" />
+        
+        <div>
+          <label for="operation">Choose Operation:</label>
+          <input type="radio" id="add" name="operation" value="add" checked />
+          <label for="add">Addition</label>
+          <input type="radio" id="sub" name="operation" value="sub" />
+          <label for="sub">Subtraction</label>
+          <input type="radio" id="mul" name="operation" value="mul" />
+          <label for="mul">Multiplication</label>
+          <input type="radio" id="div" name="operation" value="div" />
+          <label for="div">Division</label>
+        </div>
+    
+        <button onclick="calculate()">Calculate</button>
+        <p>Binary Result: <span id="calcResult"></span></p>
+    
+        <h3>Conversion History</h3>
+        <ul id="historyList"></ul>
+    
+        <button onclick="clearAll()">Clear All</button>
+      </div>
+</body>
+</html>
